@@ -4,7 +4,7 @@ The available tools include: numerical integration of solutions, using the metho
 
 As a default: the system's reference frame is rotational, with the smaller mass to the right of the origin; the numerical integrator is the Prince-Dormand Runge-Kutta 8(9); the Poincare map is given by y=0 and ydot>0; the equations of motion are locally regularized around the primaries using Levi-Civita transformation; and collisions with the primaries are not considered. All of these settings can be changed in the source code.
 
-As an example of the software capabilities, see the following paper: V. M. de Oliveira, P. A. Sousa-Silva, I. L. Caldas, "Order-chaos-order and invariant manifolds in the bounded planar Earth-Moon system," *Celestial Mechanics and Dynamical Astronomy*, vol. 132, no. 11, pp 1-17,, 2020. DOI: 10.1007/s10569-020-09989-x.
+As an example of the software capabilities, see the following paper: V. M. de Oliveira, P. A. Sousa-Silva, I. L. Caldas, "Order-chaos-order and invariant manifolds in the bounded planar Earth-Moon system," *Celestial Mechanics and Dynamical Astronomy*, vol. 132, no. 11, pp 1-17, 2020. DOI: 10.1007/s10569-020-09989-x.
 
 Author: V. de Oliveira
 
