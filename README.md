@@ -36,3 +36,11 @@ make clean -s
 ```sh
 gnuplot file.sh
 ```
+
+![fig_overview](https://user-images.githubusercontent.com/52892492/103288957-d754ab00-49c4-11eb-9df5-57f29a20ed4b.png)
+
+![fig_phase_space](https://user-images.githubusercontent.com/52892492/103288976-e0457c80-49c4-11eb-8cd2-1de7b88fb316.png)
+
+![fig_manifolds_coordinate_space](https://user-images.githubusercontent.com/52892492/103288983-e3d90380-49c4-11eb-9562-15bdb4a4a7c3.png)
+
+![fig_manifolds_coordinate_space_zoom](https://user-images.githubusercontent.com/52892492/103288986-e63b5d80-49c4-11eb-9258-3e972953ab68.png)
