@@ -37,10 +37,8 @@ make clean -s
 gnuplot file.sh
 ```
 
-![fig_overview](https://user-images.githubusercontent.com/52892492/103288957-d754ab00-49c4-11eb-9df5-57f29a20ed4b.png =20x20)
+<img src="https://user-images.githubusercontent.com/52892492/103288957-d754ab00-49c4-11eb-9df5-57f29a20ed4b.png" height="400" width="400"> <img src="https://user-images.githubusercontent.com/52892492/103290345-1801f380-49c8-11eb-8e19-b017a79b0bf3.png" height="400" width="400">
 
-![fig_phase_space](https://user-images.githubusercontent.com/52892492/103288976-e0457c80-49c4-11eb-8cd2-1de7b88fb316.png)
+<img src="https://user-images.githubusercontent.com/52892492/103288976-e0457c80-49c4-11eb-8cd2-1de7b88fb316.png" height="400" width="400"> <img src="https://user-images.githubusercontent.com/52892492/103306411-3f6ab780-49ec-11eb-91df-c9bb694a30e2.png" height="400" width="400">
 
-![fig_manifolds_coordinate_space](https://user-images.githubusercontent.com/52892492/103288983-e3d90380-49c4-11eb-9562-15bdb4a4a7c3.png)
-
-![fig_manifolds_coordinate_space_zoom](https://user-images.githubusercontent.com/52892492/103288986-e63b5d80-49c4-11eb-9258-3e972953ab68.png)
+<img src="https://user-images.githubusercontent.com/52892492/103288983-e3d90380-49c4-11eb-9562-15bdb4a4a7c3.png" height="400" width="400"> <img src="https://user-images.githubusercontent.com/52892492/103288986-e63b5d80-49c4-11eb-9258-3e972953ab68.png" height="400" width="400">
