@@ -1,4 +1,4 @@
-This software was developed to numerically investigate the dynamical and geometrical aspects of the planar circular restricted three-body problem. It is entirely written in c and most of the functions use the [Gnu Scientific Library](https://www.gnu.org/software/gsl/). In order to use it, open the main.c file and uncomment the function you want to use. You might have to input some values such as the Jacobi constant and the mass parameter. The results should appear as a .dat file in the results folder. The graphical part is up to you (for now).
+This software was developed to numerically investigate the dynamical and geometrical aspects of the planar circular restricted three-body problem. It is entirely written in c and most of the functions use the [Gnu Scientific Library](https://www.gnu.org/software/gsl/). In order to use it, open the main.c file and uncomment the function you want. You might have to input some values such as the Jacobi constant and the mass parameter. The results should appear as a .dat file in the results folder. If gnuplot is installed, there are some shell scripts that can be used to plot the data files in the scripts folder.
 
 The available tools include: numerical integration of solutions, using the methods provided by GSL; determination of periodic orbits, including Lyapunov and g-family orbits; calculation of two-dimensional invariant manifolds of unstable periodic orbits; tracing zero-velocity curves; determination of Lagrangian points location; and drawing of Poincare maps.
 
@@ -8,7 +8,7 @@ As an example of the software capabilities, see the following paper: V. M. de Ol
 
 Author: V. de Oliveira
 
-Last update: Dec. 23 of 2020
+Last update: Dec. 29 of 2020
 
 ## Requirements
 ```sh
@@ -30,4 +30,9 @@ make -s
 ## Clean
 ```sh
 make clean -s
+```
+
+## Shell scripts
+```sh
+gnuplot file.sh
 ```
