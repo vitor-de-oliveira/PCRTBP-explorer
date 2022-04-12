@@ -76,36 +76,34 @@ int set_integrator(const gsl_odeiv2_step_type *T, char *integrator)
 
 int set_system(gsl_odeiv2_system *sys, void *par, char *system)
 {
-	double mu = *(double *)par;
-
 	if (strcmp(system, "rotational") == 0 || 
 		strcmp(system, "regularized") == 0)
 	{
 		(*sys).function = field_rotational;
 		(*sys).jacobian = jacobian_rotational;
 		(*sys).dimension = 4;
-		(*sys).params = &mu;
+		(*sys).params = par;
 	}
 	else if (strcmp(system, "extended") == 0)
 	{
 		(*sys).function = field_extended;
 		(*sys).jacobian = NULL;
 		(*sys).dimension = 20;
-		(*sys).params = &mu;
+		(*sys).params = par;
 	}
 	else if (strcmp(system, "hamiltonian") == 0)
 	{
 		(*sys).function = field_hamiltonian;
 		(*sys).jacobian = NULL;
 		(*sys).dimension = 4;
-		(*sys).params = &mu;
+		(*sys).params = par;
 	}
 	else if (strcmp(system, "inertial") == 0)
 	{
 		(*sys).function = field_inertial;
 		(*sys).jacobian = NULL;
 		(*sys).dimension = 4;
-		(*sys).params = &mu;
+		(*sys).params = par;
 	}
 	else
 	{
