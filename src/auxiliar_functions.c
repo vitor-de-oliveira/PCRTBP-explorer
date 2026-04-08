@@ -2,58 +2,64 @@
 
 double collinear_lagrangian_point_x_coordinate(void *params, int n)
 {
-	double result;
-	double mu = *(double *)params;
-	double mu2, mu3, mu4;
-	double x2, x3, x4, x5;
-	double a0, a1, a2, a3, a4, a5;
-	double x, x_new, p, p_derivative, delta;
-	mu2 = mu * mu;
-	mu3 = mu * mu * mu;
-	mu4 = mu * mu * mu * mu;
-	if (n == 1)
-	{
-		a0 = -1. + 3. * mu - 3. * mu2 + 2. * mu3;
-		a1 = 2. - 4. * mu + 5. * mu2 - 2. * mu3 + mu4;
-		a2 = -1. + 4. * mu - 6. * mu2 + 4. * mu3;
-		a3 = 1. - 6. * mu + 6. * mu2;
-		a4 = -2. + 4. * mu;
-		a5 = 1.;
-	}
-	else if (n == 2)
-	{
-		a0 = -1. + 3. * mu - 3. * mu2;
-		a1 = 2. - 4. * mu + mu2 - 2. * mu3 + mu4;
-		a2 = -1. + 2. * mu - 6. * mu2 + 4. * mu3;
-		a3 = 1. - 6. * mu + 6. * mu2;
-		a4 = -2. + 4. * mu;
-		a5 = 1.;
-	}
-	x = (1. - mu) - pow((mu / 3.), (1. / 3.));
-	do
-	{
-		x2 = x * x;
-		x3 = x * x * x;
-		x4 = x * x * x * x;
-		x5 = x * x * x * x * x;
-		p = a0 + a1 * x + a2 * x2 + a3 * x3 + a4 * x4 + a5 * x5;
-		p_derivative = a1 + 2. * a2 * x + 3. * a3 * x2 + 4. * a4 * x3 + 5. * a5 * x4;
-		x_new = x - p / p_derivative;
-		delta = fabs(x_new - x);
-		x = x_new;
-	} while (delta > 1e-15);
-	result = x_new;
-	double mu_1 = 1. - mu;
-	double mu_2 = mu;
-	double frac_mu = mu_2 / mu_1;
-	double beta = -(7. / 12.) * frac_mu + (7. / 12.) * frac_mu * frac_mu - (13223. / 20736.) * frac_mu * frac_mu * frac_mu;
-	if (n == 3) result = mu_1 - (2. + beta);
-	if (n != 1 && n != 2 && n != 3)
-	{
-		printf("Warning: invalid integer for\ncollinear lagrangian function\n");
-		exit(2);
-	}
-	return result;
+    double result;
+    double mu = *(double *)params;
+    if (n != 1 && n != 2 && n != 3)
+    {
+        printf("Warning: invalid integer for\ncollinear lagrangian function\n");
+        exit(2);
+    }
+    else if (n != 3)
+    {
+        double mu2, mu3, mu4;
+        double x2, x3, x4, x5;
+        double a0, a1, a2, a3, a4, a5;
+        double x, x_new, p, p_derivative, delta;
+        mu2 = mu * mu;
+        mu3 = mu * mu * mu;
+        mu4 = mu * mu * mu * mu;
+        if (n == 1)
+        {
+            a0 = -1. + 3. * mu - 3. * mu2 + 2. * mu3;
+            a1 = 2. - 4. * mu + 5. * mu2 - 2. * mu3 + mu4;
+            a2 = -1. + 4. * mu - 6. * mu2 + 4. * mu3;
+            a3 = 1. - 6. * mu + 6. * mu2;
+            a4 = -2. + 4. * mu;
+            a5 = 1.;
+        }
+        else if (n == 2)
+        {
+            a0 = -1. + 3. * mu - 3. * mu2;
+            a1 = 2. - 4. * mu + mu2 - 2. * mu3 + mu4;
+            a2 = -1. + 2. * mu - 6. * mu2 + 4. * mu3;
+            a3 = 1. - 6. * mu + 6. * mu2;
+            a4 = -2. + 4. * mu;
+            a5 = 1.;
+        }
+        x = (1. - mu) - pow((mu / 3.), (1. / 3.));
+        do
+        {
+            x2 = x * x;
+            x3 = x * x * x;
+            x4 = x * x * x * x;
+            x5 = x * x * x * x * x;
+            p = a0 + a1 * x + a2 * x2 + a3 * x3 + a4 * x4 + a5 * x5;
+            p_derivative = a1 + 2. * a2 * x + 3. * a3 * x2 + 4. * a4 * x3 + 5. * a5 * x4;
+            x_new = x - p / p_derivative;
+            delta = fabs(x_new - x);
+            x = x_new;
+        } while (delta > 1e-15);
+        result = x_new;
+    }
+    else
+    {
+        double mu_1 = 1. - mu;
+        double mu_2 = mu;
+        double frac_mu = mu_2 / mu_1;
+        double beta = -(7. / 12.) * frac_mu + (7. / 12.) * frac_mu * frac_mu - (13223. / 20736.) * frac_mu * frac_mu * frac_mu;
+        result = mu_1 - (2. + beta);
+    }
+    return result;
 }
 
 double distance_to_primary(double *y, void *params, double t, char *system, int n)
